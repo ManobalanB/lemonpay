@@ -1,0 +1,211 @@
+@font-face {
+  font-family: 'Nunito';
+  src: url('fonts/nunito.woff2') format('woff2'),
+       url('fonts/nunito.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --font-family-nunito: 'Nunito', sans-serif;
+  --text-white: rgba(255, 255, 255, 1);
+  --text-rgb-30-59-163: rgba(30, 59, 163, 1);
+  --text-black: rgba(0, 0, 0, 1);
+  --text-rgb-146-143-143: rgba(146, 143, 143, 1);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family-nunito);
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: linear-gradient(135deg, #e0e7ff 0%, #c3d4ff 50%, #a3bffa 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.circle-1 {
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+.circle-2 {
+  position: absolute;
+  bottom: -150px;
+  left: -150px;
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+.circle-3 {
+  position: absolute;
+  bottom: -50px;
+  left: 200px;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  padding: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.left-section {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.logo {
+  font-family: var(--font-family-nunito);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-rgb-30-59-163);
+  margin-bottom: 10px;
+}
+
+.logo span {
+  color: #facc15;
+}
+
+.tagline {
+  font-family: var(--font-family-nunito);
+  font-size: 16px;
+  color: #facc15;
+  margin-bottom: 40px;
+}
+
+.promotion-text {
+  font-family: var(--font-family-nunito);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-white);
+  line-height: 1.2;
+}
+
+.promotion-text span {
+  color: #facc15;
+}
+
+.right-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-title {
+  font-family: var(--font-family-nunito);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-rgb-30-59-163);
+  margin-bottom: 10px;
+}
+
+.form-subtitle {
+  font-family: var(--font-family-nunito);
+  font-size: 16px;
+  color: var(--text-rgb-30-59-163);
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input {
+  padding: 12px;
+  font-family: var(--font-family-nunito);
+  font-size: 16px;
+  color: var(--text-black);
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-radius: 8px;
+  outline: none;
+}
+
+input::placeholder {
+  color: var(--text-rgb-146-143-143);
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.checkbox-container input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+
+.checkbox-container label {
+  font-family: var(--font-family-nunito);
+  font-size: 16px;
+  color: var(--text-rgb-30-59-163);
+}
+
+.link-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.link-container a {
+  font-family: var(--font-family-nunito);
+  font-size: 16px;
+  color: var(--text-rgb-30-59-163);
+  text-decoration: none;
+}
+
+button {
+  padding: 15px;
+  font-family: var(--font-family-nunito);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-white);
+  background-color: var(--text-rgb-30-59-163);
+  border: none;
+  border-radius: 41px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #1a3ca3;
+}
+
+.error {
+  font-family: var(--font-family-nunito);
+  font-size: 14px;
+  color: #ff0000;
+  margin-bottom: 10px;
+}

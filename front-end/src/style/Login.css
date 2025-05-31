@@ -20,20 +20,25 @@ body {
   box-sizing: border-box;
   font-family: var(--font-family-nunito);
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
   overflow-x: hidden;
-  background: linear-gradient(135deg, #ffffff 0%, #c5ceff 40%, #3636c5 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #c5ceff 25%, #3636c5 80%);
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+} 
+
+.lemonlogo-1{
+    position: relative;
+    bottom: 180px;
+    right: 260px;
 }
 
 
 
 
 
-/* Full page grid layout with 2 columns */
 .grid-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -41,7 +46,6 @@ body {
 }
 
 
-/* Left side */
 .left-panel {
   display: flex;
   flex-direction: column;
@@ -49,10 +53,8 @@ body {
   position: relative;
   right: 250px;
   padding: 3rem;
-  /* color: white; */
 }
 
-/* Right side */
 .right-panel {
   display: flex;
   align-items: center;
@@ -60,7 +62,6 @@ body {
   padding: 3rem;
 }
 
-/* Typography */
 .text-heading {
   font-size: 2rem;
 }
@@ -70,28 +71,31 @@ body {
 }
 
 .text-promo-lg {
+  color: white;
   font-size: 2.5rem;
   line-height: 1.3;
+  position: relative;
+  right: 220px;
 }
 
 .text-accent {
-  color: #facc15;
+  color: #efd364;
+
 }
-.text-accent :hover{
-  color: #83c042;
+.text-change {
+  color: white;
 }
 
 .text-primary {
   color: #facc15;
 }
 
-/* Input fields */
 .bg-inputBg {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
 .text-textDark {
-  color: #1f2937; /* Tailwind gray-800 */
+  color: #1f2937; 
 }
 
 input,
@@ -100,7 +104,7 @@ button {
 }
 
 button:hover {
-  background-color: #f3f4f6; /* Tailwind gray-100 */
+  background-color: #f3f4f6; 
 }
 
 input:focus {
@@ -111,8 +115,6 @@ input:focus {
 input[type='checkbox'] {
   accent-color: #facc15;
 }
-
-/* Responsive stacking on mobile */
 @media (max-width: 768px) {
   .grid-layout {
     grid-template-columns: 1fr;
@@ -137,34 +139,47 @@ input[type='checkbox'] {
 }
 
 
+/* Style for the container of the circles */
+.background-circles {
+  position: absolute;
+  
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Ensures circles are behind other content */
+  pointer-events: none; /* Prevents circles from interfering with clicks */
+}
 
+/* Common styles for all circles */
+.background-circles div {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white for a soft effect */
+  border-radius: 50%; /* Makes the shape circular; adjust width/height for ellipse */
+}
 
-
-
+/* Individual circle styles based on the image */
 .circle-1 {
-  top: -100px;
-  right: -60px;
-  width: 250px;
+  width: 300px; /* Width larger than height for slight ellipse */
   height: 250px;
-  background: rgba(238, 207, 207, 0.3);
+  top: -100px;
+  left: 1850px;
+  background: rgba(255, 255, 255, 0.15); /* Slightly different opacity */
 }
 
 .circle-2 {
-  bottom: -100px;
-  left: -100px;
-  width: 300px;
-  height: 300px;
-  background: rgba(145, 106, 106, 0.3);
+  width: 400px; /* Larger circle */
+  height: 350px;
+  bottom: 0;
+  left: 200px; /* Positioned to overlap with circle-1 */
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .circle-3 {
-  bottom: 30px;
-  left: 40%;
-  width: 180px;
-  height: 180px;
-  background: rgba(135, 97, 97, 0.25);
+  width: 250px;
+  height: 200px;
+  top: 600px;
+  left: 700px;
+  background: rgba(255, 255, 255, 0.25);
 }
-
 
 .container {
   display: flex;
@@ -268,6 +283,45 @@ form {
   gap: 15px;
 }
 
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.25);
+  border: none;
+  border-radius: 6px;
+  color: #000;
+  font-size: 0.9rem;
+}
+
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+  color: #d9d9d9;
+}
+
+input:focus {
+  outline: 2px solid #d4d42a;
+}
+
+/* Buttons */
+button[type="submit"] {
+  background-color: #ad1d1d;
+  color: #1a1a1a;
+  font-weight: bold;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #3636c5;
+}
+
+
+/* 
 input {
   padding: 12px;
   font-family: var(--font-family-nunito);
@@ -281,7 +335,7 @@ input {
 
 input::placeholder {
   color: var(--text-rgb-146-143-143);
-} */
+} 
  input {
   background-color: rgba(203, 194, 255, 0.2); 
   color: white;
@@ -336,9 +390,6 @@ button {
   cursor: pointer;
   transition: background-color 0.3s;
 } 
-/* button:hover {
-  background-color: #1a3ca3;
-} */
 button {
   color: #000000;
   background-color: #ffffff;
@@ -350,7 +401,7 @@ button {
 button:hover {
   background-color: #3c0e86;
   color: #a3bffa;
-}
+} */
 
 .error {
   font-family: var(--font-family-nunito);
@@ -359,13 +410,6 @@ button:hover {
   margin-bottom: 10px;
 }  
 
-/* -------------------------------------
-   Responsive Media Queries
--------------------------------------- */
-
-/* Mobile First (Default styles already apply to small devices) */
-
-/* Tablets (min-width: 768px) */
 @media (min-width: 768px) and (max-width: 1023px) {
   .grid-layout {
     grid-template-columns: 1fr;
@@ -391,7 +435,6 @@ button:hover {
   }
 }
 
-/* Desktops (min-width: 1024px) */
 @media (min-width: 1024px) {
   .grid-layout {
     grid-template-columns: 1fr 1fr;
@@ -416,7 +459,6 @@ button:hover {
   }
 }
 
-/* Mobile Devices - max-width: 768px */
 @media (max-width: 768px) {
   .grid-layout {
     display: flex;
@@ -425,7 +467,7 @@ button:hover {
 
   .left,
   .right {
-    position: static !important;   /* Remove hardcoded offsets */
+    position: static !important;   
     width: 100%;
     padding: 2rem;
     text-align: center;

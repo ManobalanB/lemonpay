@@ -28,17 +28,23 @@ export default function LoginPage() {
       <div className="left-panel">
       <div className="w-1/2 flex flex-col justify-center p-12 text-white">
         <div className="mb-8">
-          <img src={lemon} alt="Lemonpay Logo" width={220} height={140} />
-        </div><br/>
+          <img src={lemon} className="lemonlogo" alt="Lemonpay Logo" width={300} height={140} />
+        </div><br/><br/>
         <h2 className="text-promo-lg font-bold leading-tight">
           Join 1000+ Businesses<br />
         <span className="text-accent">
-          Powering Growth with <br />Lemonpay!
-        </span>
+          Powering Growth with <br /></span><span className="text-change">Lemonpay!</span>
+        
 
         </h2>
         </div>
       </div>
+      <div class="background-circles">
+        <div class="circle-1"></div>
+        <div class="circle-2"></div>
+        <div class="circle-3"></div>
+      </div>
+
       {/* Right Login Form Section */}
       <div className="right-panel">
       <div className="w-1/2 flex items-center justify-center p-12">
@@ -94,6 +100,7 @@ export default function LoginPage() {
               Sign In
             </button>
           </form>
+
           </div>
         </div>
       </div>
